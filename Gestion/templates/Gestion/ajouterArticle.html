@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+{% load static %}
+<html style="font-size: 16px;">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="page_type" content="np-template-header-footer-from-plugin">
+    <title>Gestion du Stock</title>
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <link rel="stylesheet" href="{% static 'Gestion/nicepage.css' %}" media="screen">
+    <link rel="stylesheet" href="{% static 'Gestion/bootstrap.css' %}" media="screen">
+    <link rel="stylesheet" href="{% static 'Gestion/Gestion-du-Stock.css' %}" media="screen">
+    <link rel="stylesheet" href="{% static 'Gestion/toastr.css' %}" media="screen">
+    <script  type="text/javascript" src="{% static 'Gestion/jquery.js' %}" ></script>
+    <script  type="text/javascript" src="{% static 'Gestion/nicepage.js' %}" ></script>
+    <script  type="text/javascript" src="{% static 'Gestion/toastr.min.js' %}" ></script>
+    <meta name="generator" content="Nicepage 4.1.0, nicepage.com">
+    <link id="u-theme-google-font" rel="stylesheet" href="{% static 'Gestion/font.css' %}">
+    
+    
+    <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": "",
+		"logo": "images/Wholesalers_0.png"
+}</script>
+    <meta name="theme-color" content="#478ac9">
+    <meta property="og:title" content="Gestion du Stock">
+    <meta property="og:type" content="website">
+  
+
+  </head>
+  
+
+  <body class="u-body"><header class="u-clearfix u-header u-header" id="sec-62b2"><div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+    <a href="https://nicepage.com" class="u-image u-logo u-image-1" data-image-width="1001" data-image-height="601">
+      <img src="{% static 'Gestion/images/Wholesalers_0.png' %}" class="u-logo-image u-logo-image-1">
+    </a>
+    <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
+      <div class="menu-collapse" style="font-size: 1.25rem; letter-spacing: 0px; font-weight: 500;">
+        <a class="u-button-style u-custom-active-border-color u-custom-active-color u-custom-border u-custom-border-color u-custom-borders u-custom-hover-border-color u-custom-hover-color u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-active-color u-custom-text-color u-custom-text-hover-color u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#">
+          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use></svg>
+          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><symbol id="menu-hamburger" viewBox="0 0 16 16" style="width: 16px; height: 16px;"><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect>
+</symbol>
+</defs></svg>
+        </a>
+      </div>
+      <div class="u-custom-menu u-nav-container">
+        <ul class="u-nav u-spacing-2 u-unstyled u-nav-1"><li class="u-nav-item"><a href="{% url 'Accueil' %}" class="u-active-grey-5 u-border-active-palette-1-base u-border-hover-palette-1-base u-button-style u-hover-grey-10 u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" style="padding: 10px 20px;">Accueil</a>
+        </li><li class="u-nav-item"><a href="{% url 'Travail' %}" class="u-active-grey-5 u-border-active-palette-1-base u-border-hover-palette-1-base u-button-style u-hover-grey-10 u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" style="padding: 10px 20px;">Travail</a>
+        </li><li class="u-nav-item"><a class="u-active-grey-5 u-border-active-palette-1-base u-border-hover-palette-1-base u-button-style u-hover-grey-10 u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="{% url 'GestionStock' %}" style="padding: 10px 20px;">Gestion des articles</a><div class="u-nav-popup"><ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-3"><li class="u-nav-item"><a href="{% url 'ajouterArticle' %}" class="u-button-style u-nav-link u-palette-5-base u-text-black">Ajouter un article</a>
+        </li></ul>
+        </div>
+        </li><li class="u-nav-item"><a class="u-active-grey-5 u-border-active-palette-1-base u-border-hover-palette-1-base u-button-style u-hover-grey-10 u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" style="padding: 10px 20px;">Gestion du stock</a><div class="u-nav-popup"><ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-3"><li class="u-nav-item"><a href="{% url 'modifierStock' %}" class="u-button-style u-nav-link u-palette-5-base u-text-black">Modifier le stock</a>
+        </li></ul>
+        </div>
+        </li><li class="u-nav-item"><a class="u-active-grey-5 u-border-active-palette-1-base u-border-hover-palette-1-base u-button-style u-hover-grey-10 u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" style="padding: 10px 20px;">Comptabilité</a>
+        </li></ul>
+      </div>
+      <div class="u-custom-menu u-nav-container-collapse">
+        <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
+          <div class="u-inner-container-layout u-sidenav-overflow">
+            <div class="u-menu-close"></div>
+            <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-4"><li class="u-nav-item"><a class="u-button-style u-nav-link" style="padding: 10px 20px;">Accueil</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'GestionStock' %}" style="padding: 10px 20px;">Gestion des articles</a><div class="u-nav-popup"><ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-5"><li class="u-nav-item"><a href="{% url 'ajouterArticle' %}" class="u-button-style u-nav-link u-palette-5-base u-text-black">Ajouter un article</a>
+</li></ul>
+</div>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" style="padding: 10px 20px;">Gestion du stock</a><div class="u-nav-popup"><ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-6"><li class="u-nav-item"><a class="u-button-style u-nav-link u-palette-5-base u-text-black">Consulter le stock</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-palette-5-base u-text-black">Modifier le stock</a>
+</li></ul>
+</div>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" style="padding: 10px 20px;">Facturation</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" style="padding: 10px 20px;">Autres</a>
+</li></ul>
+          </div>
+        </div>
+        <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
+      </div>
+    </nav>
+    {% for message in messages %}
+<script type=text/javascript> toastr.{{ message.tags }}('{{ message }}') </script>
+{% endfor %}  
+    <h2>Ajout d'un nouvel article:</h2>
+<div class="container">
+<form method="POST">
+    {% csrf_token %}
+  <div class="row mb-4"> 
+    <div class="col">
+    <div class="form-outline">
+        <label class="form-label" for="form6Example1">Nom</label>
+        <input type="text" name="Nom" maxlength="100" required="" id="id_Nom" class="form-control">
+        
+    </div>
+    </div>
+</div>
+<div class="row mb-4"> 
+    <div class="col">
+    <div class="form-outline">
+        <label class="form-label" for="form6Example1">Type</label>
+        <input type="text" name="Type"  maxlength="100" required="" id="id_Type" class="form-control">
+        
+    </div>
+    </div>
+    <div class="col">
+        <div class="form-outline">
+            <label class="form-label" for="form6Example1">Marque</label>
+            <input type="text" name="Marque"  maxlength="100" required="" id="id_Marque" class="form-control">
+            
+        </div>
+        </div>
+</div>
+<div class="row mb-4"> 
+    <div class="col">
+    <div class="form-outline">
+        <label class="form-label" for="form6Example1">Quantité</label>
+        <input type="number" name="nbDisponible"  maxlength="100" required="" id="id_nbDisponible" class="form-control">
+        
+    </div>
+    </div>
+    <div class="col">
+        <div class="form-outline">
+            <label class="form-label" for="form6Example1">Prix Unitaire</label>
+            <input type="float" name="prix"  maxlength="100" required="" id="id_prix" class="form-control">
+            
+        </div>
+        </div>
+</div>
+
+
+  
+    <!-- Submit button -->
+    <button type="submit"  class="btn btn-success btn-block mb-2">Créer</button>
+  </form>
+</div>
+
+
+
+ 
+
+
+  <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-7b2b"><div class="u-clearfix u-sheet u-sheet-1">
+    <p class="u-small-text u-text u-text-variant u-text-1"> Application de Gestion de Stock et de Comptabilité.&nbsp;<br>Touts Droits Réservés.&nbsp;<br>2021<br>AZD
+    </p>
+  </div></footer>
+
+</body>
+</html>

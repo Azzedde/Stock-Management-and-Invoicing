@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+{% load static %}
+<html style="font-size: 16px;">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="page_type" content="np-template-header-footer-from-plugin">
+    <title>Gestion du Stock</title>
+    <link rel="stylesheet" href="{% static 'Gestion/fontawesome.min.css' %}" >
+    <link rel="stylesheet" href="{% static 'Gestion/bootstrap.min.css' %}" >
+    <link rel="stylesheet" href="{% static 'Gestion/nicepage.css' %}" >
+    <link rel="stylesheet" href="{% static 'Gestion/toastr.css' %}" media="screen">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="generator" content="Nicepage 4.1.0, nicepage.com">
+    <link id="u-theme-google-font" rel="stylesheet" href="{% static 'Gestion/font.css' %}">
+    
+    
+    <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": "",
+		"logo": "images/Wholesalers_0.png"
+}</script>
+    <meta name="theme-color" content="#478ac9">
+    <meta property="og:title" content="Gestion du Stock">
+    <meta property="og:type" content="website">
+  </head>
+  <body class="u-body">
+    <script  type="text/javascript" src="{% static 'Gestion/jquery.js' %}" ></script>
+    <script  type="text/javascript" src="{% static 'Gestion/toastr.min.js' %}" ></script>
+    <script  type="text/javascript" src="{% static 'Gestion/nicepage.js' %}" ></script>
+    <header class="u-clearfix u-header u-header" id="sec-62b2"><div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+        <a href="https://nicepage.com" class="u-image u-logo u-image-1" data-image-width="1001" data-image-height="601">
+          <img src="{% static 'Gestion/images/Wholesalers_0.png' %}" class="u-logo-image u-logo-image-1">
+        </a>
+        <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
+          <div class="menu-collapse" style="font-size: 1.25rem; letter-spacing: 0px; font-weight: 500;">
+            <a class="u-button-style u-custom-active-border-color u-custom-active-color u-custom-border u-custom-border-color u-custom-borders u-custom-hover-border-color u-custom-hover-color u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-active-color u-custom-text-color u-custom-text-hover-color u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#">
+              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use></svg>
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><symbol id="menu-hamburger" viewBox="0 0 16 16" style="width: 16px; height: 16px;"><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect>
+</symbol>
+</defs></svg>
+            </a>
+          </div>
+          <div class="u-custom-menu u-nav-container">
+            <ul class="u-nav u-spacing-2 u-unstyled u-nav-1"><li class="u-nav-item"><a href = "{% url 'Accueil' %}" class="u-active-grey-5 u-border-active-palette-1-base u-border-hover-palette-1-base u-button-style u-hover-grey-10 u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" style="padding: 10px 20px;">Accueil</a>
+</li><li class="u-nav-item"><a href="{% url 'Travail' %}" class="u-active-grey-5 u-border-active-palette-1-base u-border-hover-palette-1-base u-button-style u-hover-grey-10 u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" style="padding: 10px 20px;">Travail</a>
+</li><li class="u-nav-item"><a href="{% url 'Comptabilité' %}" class="u-active-grey-5 u-border-active-palette-1-base u-border-hover-palette-1-base u-button-style u-hover-grey-10 u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" style="padding: 10px 20px;">Comptabilité</a>
+</li><li class="u-nav-item"><a class="u-active-grey-5 u-border-active-palette-1-base u-border-hover-palette-1-base u-button-style u-hover-grey-10 u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" style="padding: 10px 20px;">Gestion des Etablissements</a><div class="u-nav-popup"><ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-5"><li class="u-nav-item"><a href="{% url 'AjouterEtablissement' %}" class="u-button-style u-nav-link u-palette-5-base u-text-black">Ajouter un Etablissement</a>
+</li></ul></div>
+</li><li class="u-nav-item"><a class="u-active-grey-5 u-border-active-palette-1-base u-border-hover-palette-1-base u-button-style u-hover-grey-10 u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" style="padding: 10px 20px;">Gestion des Factures</a><div class="u-nav-popup"><ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-5"><li class="u-nav-item"><a href="{% url 'AjouterFacture' %}" class="u-button-style u-nav-link u-palette-5-base u-text-black">Ajouter une Facture</a>
+</li></ul></div>
+</li><li class="u-nav-item"><a class="u-active-grey-5 u-border-active-palette-1-base u-border-hover-palette-1-base u-button-style u-hover-grey-10 u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" style="padding: 10px 20px;">Gestion des BL</a><div class="u-nav-popup"><ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-5"><li class="u-nav-item"><a href="{% url 'AjouterBL' %}" class="u-button-style u-nav-link u-palette-5-base u-text-black">Ajouter un BL</a>
+</li></ul></div>
+</li></ul>
+          </div>
+          <div class="u-custom-menu u-nav-container-collapse">
+            <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
+              <div class="u-inner-container-layout u-sidenav-overflow">
+                <div class="u-menu-close"></div>
+                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-4"><li class="u-nav-item"><a class="u-button-style u-nav-link" style="padding: 10px 20px;">Accueil</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Gestion-des-articles.html" style="padding: 10px 20px;">Gestion des articles</a><div class="u-nav-popup"><ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-5"><li class="u-nav-item"><a class="u-button-style u-nav-link u-palette-5-base u-text-black">Ajouter un article</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-palette-5-base u-text-black">Modifier un article</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-palette-5-base u-text-black">Supprimer un article</a>
+</li></ul>
+</div>
+</li><li class="u-nav-item"><a href="{% url 'modifierStock' %}" class="u-button-style u-nav-link" style="padding: 10px 20px;">Gestion du stock</a><div class="u-nav-popup"><ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-6"><li class="u-nav-item"><a href="{% url 'modifierStock' %}" class="u-button-style u-nav-link u-palette-5-base u-text-black">Modifier le stock</a>
+</li></ul>
+</div>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" style="padding: 10px 20px;">Facturation</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" style="padding: 10px 20px;">Autres</a>
+</li></ul>
+              </div>
+            </div>
+            <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
+          </div>
+        </nav>
+        {% for message in messages %}
+        <script type=text/javascript> toastr.{{ message.tags }}('{{ message }}') </script>
+        {% endfor %} 
+      </div></header>
+    <section class="u-align-center u-border-2 u-border-grey-75 u-clearfix u-section-1" id="sec-28ef">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <h4 class="u-text u-text-default u-text-1">Consultation </h4>
+        <div class="u-table u-table-responsive u-table-1">
+          <table class="u-table-entity u-table-entity-1">
+            <colgroup>
+              <col width="20%">
+              <col width="20%">
+              <col width="20%">
+              <col width="20%">
+              <col width="20%">
+            </colgroup>
+            <thead class="u-palette-1-base u-table-header u-table-header-1">
+              <tr style="height: 21px;">
+                <th class="u-border-1 u-border-palette-4-base u-table-cell">Nom de l'établissement</th>
+                <th class="u-border-1 u-border-palette-4-base u-table-cell">Liste des factures</th>
+                <th class="u-border-1 u-border-palette-4-base u-table-cell">Liste des BL</th>
+                <th class="u-border-1 u-border-palette-4-base u-table-cell">Montant</th>
+                
+                
+              </tr>
+            </thead>
+            <tbody class="u-table-body">
+              {% for et in e %}
+              <tr style="height: 75px;">
+                <td  class="u-border-2 u-border-grey-30 u-border-no-left u-border-no-right u-first-column u-grey-5 u-table-cell u-table-cell-6"><a href="{% url 'ConsulterEtablissement' et.id %}" >{{et.Nom}}</a></td>
+                <td class="u-border-1 u-border-grey-30 u-table-cell"><ul>{% for f in et.facture_set.all %}<li><a href="{% url 'ConsulterFacture' f.id %}"> {{f}} </a></li>{% endfor %}</ul></td>
+                <td class="u-border-1 u-border-grey-30 u-table-cell"><ul>{% for b in et.bon_set.all %}<li><a href="{% url 'ConsulterBL' b.id %}" > {{b}}</a> </li>{% endfor %}</ul></td>
+                <td class="u-border-1 u-border-grey-30 u-table-cell">{{et.Montant}} DZD</td>
+                
+               
+
+              </tr>
+                    
+
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+        <a  >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </a>
+      </div>
+    </section>
+
+    
+    <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-7b2b"><div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-small-text u-text u-text-variant u-text-1"> Application de Gestion de Stock et de Comptabilité.&nbsp;<br>Touts Droits Réservés.&nbsp;<br>2021<br>AZD
+        </p>
+      </div></footer>
+
+
+
+    <script src="{% static 'Gestion/slim.min.js' %}" ></script>
+    <script src="{% static 'Gestion/popper.min.js' %}" ></script>
+    <script src="{% static 'Gestion/bootstrap.min.js' %}" ></script>
+ 
+  </body>
+</html>
